@@ -1,0 +1,15 @@
+export const colors = {
+  background: '#0D0D0D',
+  surface: '#1A1A1A',
+  surfaceHigh: '#262626',
+  primary: '#C62828',
+  accent: '#FF7474',
+  orange: '#FF9900',
+  text: '#FFFFFF',
+  textSecondary: 'rgba(255,255,255,0.7)',
+  textMuted: 'rgba(255,255,255,0.4)',
+  tabBg: '#150808',
+  border: 'rgba(255,255,255,0.1)',
+  overlay: 'rgba(0,0,0,0.6)',
+  tagBg: 'rgba(255,255,255,0.12)',
+};
