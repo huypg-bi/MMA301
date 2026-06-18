@@ -1,0 +1,157 @@
+import { StyleSheet } from 'react-native';
+
+export default StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#12122A',
+  },
+  bg: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+  },
+  safeArea: {
+    flex: 1,
+  },
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 20,
+    paddingTop: 16,
+    paddingBottom: 20,
+    gap: 14,
+  },
+  closeBtn: {
+    width: 38,
+    height: 38,
+    borderRadius: 12,
+    backgroundColor: 'rgba(255,255,255,0.1)',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  closeBtnText: {
+    color: '#FFFFFF',
+    fontSize: 18,
+    lineHeight: 22,
+  },
+  headerTitle: {
+    fontSize: 22,
+    fontWeight: '700',
+    color: '#FFFFFF',
+  },
+  searchBar: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginHorizontal: 20,
+    backgroundColor: 'rgba(255,255,255,0.1)',
+    borderRadius: 16,
+    paddingHorizontal: 14,
+    height: 52,
+    gap: 10,
+    marginBottom: 16,
+  },
+  searchIcon: {
+    width: 20,
+    height: 20,
+  },
+  searchInput: {
+    flex: 1,
+    color: '#FFFFFF',
+    fontSize: 16,
+    paddingVertical: 0,
+  },
+  clearBtn: {
+    width: 22,
+    height: 22,
+    borderRadius: 11,
+    backgroundColor: 'rgba(255,255,255,0.2)',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  clearText: {
+    color: '#FFFFFF',
+    fontSize: 13,
+    lineHeight: 16,
+  },
+  loadingRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 16,
+    gap: 10,
+  },
+  loadingText: {
+    color: 'rgba(255,255,255,0.5)',
+    fontSize: 14,
+  },
+  errorBox: {
+    marginHorizontal: 20,
+    backgroundColor: 'rgba(255,80,80,0.15)',
+    borderRadius: 12,
+    padding: 12,
+    borderWidth: 1,
+    borderColor: 'rgba(255,80,80,0.3)',
+  },
+  errorText: {
+    color: '#FF6B6B',
+    fontSize: 14,
+    textAlign: 'center',
+  },
+  resultItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 20,
+    paddingVertical: 16,
+    borderBottomWidth: 1,
+    borderBottomColor: 'rgba(255,255,255,0.06)',
+    gap: 14,
+  },
+  resultIconWrapper: {
+    width: 44,
+    height: 44,
+    borderRadius: 14,
+    backgroundColor: 'rgba(255,255,255,0.08)',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  resultIcon: {
+    width: 28,
+    height: 28,
+  },
+  resultInfo: {
+    flex: 1,
+  },
+  resultCity: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#FFFFFF',
+    marginBottom: 2,
+  },
+  resultCountry: {
+    fontSize: 13,
+    color: 'rgba(255,255,255,0.5)',
+  },
+  resultTemp: {
+    fontSize: 22,
+    fontWeight: '300',
+    color: '#FFFFFF',
+  },
+  emptyState: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 12,
+    paddingBottom: 80,
+  },
+  emptyIcon: {
+    width: 80,
+    height: 80,
+    opacity: 0.3,
+  },
+  emptyText: {
+    fontSize: 15,
+    color: 'rgba(255,255,255,0.4)',
+    textAlign: 'center',
+    paddingHorizontal: 40,
+  },
+});
