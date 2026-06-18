@@ -1,4 +1,4 @@
-import { StyleSheet, Dimensions } from 'react-native';
+import { Dimensions, StyleSheet } from 'react-native';
 import { colors } from './colors';
 import { typography } from './typography';
 
@@ -53,25 +53,18 @@ export const styles = StyleSheet.create({
     height: VIDEO_HEIGHT,
     backgroundColor: 'black',
     overflow: 'hidden',
-    marginTop: 72,
+    marginTop: 110,
   },
   heroFallbackBg: {
     width: '100%',
     height: '100%',
     backgroundColor: colors.surface,
   },
-  absoluteFill: StyleSheet.absoluteFillObject,
   heroInfo: {
     backgroundColor: colors.background,
     paddingHorizontal: 20,
     paddingTop: 14,
     paddingBottom: 18,
-  },
-  heroContent: {
-    position: 'absolute',
-    bottom: 28,
-    left: 20,
-    right: 20,
   },
   heroMeta: {
     flexDirection: 'row',

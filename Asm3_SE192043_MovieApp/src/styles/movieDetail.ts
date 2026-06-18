@@ -43,7 +43,8 @@ export const styles = StyleSheet.create({
     height: VIDEO_H,
     backgroundColor: "black",
     overflow: "hidden",
-    marginTop: 80,
+    marginTop: 100,
+    marginBottom: 20,
   },
   absoluteFill: StyleSheet.absoluteFill,
   backdropFallbackBg: {
@@ -115,18 +116,6 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     gap: 12,
     marginBottom: 24,
-  },
-  watchNowBtn: {
-    flex: 1,
-    backgroundColor: colors.primary,
-    paddingVertical: 14,
-    borderRadius: 12,
-    alignItems: "center",
-  },
-  watchNowText: {
-    color: colors.text,
-    fontWeight: "700",
-    fontSize: 15,
   },
   favBtn: {
     width: 52,

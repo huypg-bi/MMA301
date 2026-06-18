@@ -4,30 +4,35 @@ import { colors } from '@/styles/colors';
 import { styles } from '@/styles/movieCard';
 import { StarIcon } from '@/components/SvgIcons';
 import { getImageUrl } from '@/utils/api';
-import { Movie, TrendingItem } from '@/utils/types';
+import { Movie, TrendingItem, TVShow } from '@/utils/types';
 
 type Props = {
-  item: Movie | TrendingItem;
+  item: Movie | TrendingItem | TVShow;
+  mediaType?: 'movie' | 'tv';
 };
 
-function getTitle(item: Movie | TrendingItem): string {
+function getTitle(item: Movie | TrendingItem | TVShow): string {
   if ('title' in item && item.title) return item.title;
   if ('name' in item && item.name) return item.name;
   return 'Unknown';
 }
 
-function getYear(item: Movie | TrendingItem): string {
-  const date = (item as Movie).release_date || (item as TrendingItem).first_air_date;
+function getYear(item: Movie | TrendingItem | TVShow): string {
+  const date =
+    (item as Movie).release_date ||
+    (item as TrendingItem).first_air_date ||
+    (item as TVShow).first_air_date;
   return date ? date.substring(0, 4) : '';
 }
 
-export function MovieCard({ item }: Props) {
+export function MovieCard({ item, mediaType: mediaTypeProp }: Props) {
   const router = useRouter();
-  const mediaType = (item as TrendingItem).media_type;
-  const isMovie = !mediaType || mediaType === 'movie';
+  const mediaType = mediaTypeProp ?? (item as TrendingItem).media_type;
 
   const onPress = () => {
-    if (isMovie) {
+    if (mediaType === 'tv') {
+      router.push(`/tv/${String(item.id)}`);
+    } else {
       router.push(`/movie/${String(item.id)}`);
     }
   };

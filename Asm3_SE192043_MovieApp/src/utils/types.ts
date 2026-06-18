@@ -48,6 +48,24 @@ export interface Video {
   type: string;
 }
 
+export interface TVShow {
+  id: number;
+  name: string;
+  original_name: string;
+  overview: string;
+  poster_path: string | null;
+  backdrop_path: string | null;
+  first_air_date: string;
+  vote_average: number;
+  vote_count: number;
+  genres?: Genre[];
+  number_of_seasons?: number;
+  number_of_episodes?: number;
+  episode_run_time?: number[];
+  status?: string;
+  tagline?: string;
+}
+
 export interface Person {
   id: number;
   name: string;

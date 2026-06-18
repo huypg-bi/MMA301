@@ -1,4 +1,4 @@
-import { Cast, Movie, Person, PersonCredit, TrendingItem, Video } from './types';
+import { Cast, Movie, Person, PersonCredit, TrendingItem, TVShow, Video } from './types';
 
 const BASE_URL = process.env.EXPO_PUBLIC_TMDB_BASE_URL!;
 const IMAGE_BASE_URL = process.env.EXPO_PUBLIC_TMDB_IMAGE_BASE_URL!;
@@ -58,6 +58,35 @@ export const getSimilarMovies = async (id: number): Promise<Movie[]> => {
   if (!res.ok) throw new Error('Failed to fetch similar movies');
   const data = await res.json();
   return (data.results as Movie[]).slice(0, 10);
+};
+
+export const getTVDetails = async (id: number): Promise<TVShow> => {
+  const res = await fetch(`${BASE_URL}/tv/${id}?language=en-US`, { headers });
+  if (!res.ok) throw new Error('Failed to fetch TV details');
+  return res.json() as Promise<TVShow>;
+};
+
+export const getTVVideos = async (id: number): Promise<Video[]> => {
+  const res = await fetch(`${BASE_URL}/tv/${id}/videos?language=en-US`, { headers });
+  if (!res.ok) throw new Error('Failed to fetch TV videos');
+  const data = await res.json();
+  return (data.results as Video[]).filter(
+    (v) => v.site === 'YouTube' && v.type === 'Trailer'
+  );
+};
+
+export const getTVCredits = async (id: number): Promise<Cast[]> => {
+  const res = await fetch(`${BASE_URL}/tv/${id}/credits?language=en-US`, { headers });
+  if (!res.ok) throw new Error('Failed to fetch TV credits');
+  const data = await res.json();
+  return (data.cast as Cast[]).slice(0, 10);
+};
+
+export const getSimilarTV = async (id: number): Promise<TVShow[]> => {
+  const res = await fetch(`${BASE_URL}/tv/${id}/similar?language=en-US`, { headers });
+  if (!res.ok) throw new Error('Failed to fetch similar TV');
+  const data = await res.json();
+  return (data.results as TVShow[]).slice(0, 10);
 };
 
 export const getPersonDetails = async (id: number): Promise<Person> => {
