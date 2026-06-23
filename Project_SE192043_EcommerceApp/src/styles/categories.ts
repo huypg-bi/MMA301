@@ -18,17 +18,17 @@ export const categoriesStyles = StyleSheet.create({
     color: '#E57373',
     fontSize: 14,
   },
-  categoryTabs: {
+  categoryTabsWrapper: {
+    height: 52,
     borderBottomWidth: 1,
     borderBottomColor: COLORS.line,
   },
   categoryTabsContent: {
     paddingHorizontal: 16,
     gap: 8,
-    height: 50,
     alignItems: 'center',
     flexDirection: 'row',
-    marginBottom: 15,
+    height: 52,
   },
   catTab: {
     paddingHorizontal: 16,
@@ -85,7 +85,7 @@ export const categoriesStyles = StyleSheet.create({
   },
   sortDropdown: {
     position: 'absolute',
-    top: 150,
+    top: 200,
     right: 16,
     backgroundColor: COLORS.off_white,
     borderRadius: 8,

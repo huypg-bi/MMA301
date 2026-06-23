@@ -39,6 +39,8 @@ const svgMap: Record<string, any> = {
   voucher: require('@/assets/svg/Voucher.svg'),
   logo: require('@/assets/svg/Logo.svg'),
   footer: require('@/assets/svg/Footer.svg'),
+  openfashion: require('@/assets/svg/Openfashion.svg'),
+  add_to_basket: require('@/assets/svg/Add_to_basket.svg'),
   twitter: require('@/assets/svg/Twitter.svg'),
   instagram: require('@/assets/svg/Instagram.svg'),
   youtube: require('@/assets/svg/Youtube.svg'),

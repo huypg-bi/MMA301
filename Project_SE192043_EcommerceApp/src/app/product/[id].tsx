@@ -15,6 +15,7 @@ import {
   Pressable,
   ScrollView,
   Text,
+  useWindowDimensions,
   View,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -33,6 +34,8 @@ export default function ProductDetailScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const router = useRouter();
   const insets = useSafeAreaInsets();
+  const { width: SCREEN_W } = useWindowDimensions();
+  const BTN_H = Math.round(56 * SCREEN_W / 375);
   const { addItem } = useCart();
 
   const [product, setProduct] = useState<Product | null>(null);
@@ -253,20 +256,21 @@ export default function ProductDetailScreen() {
       </ScrollView>
 
       {/* Bottom Action Bar */}
-      <View style={[styles.actionBar, { paddingBottom: insets.bottom - 20 }]}>
-        <Pressable
-          style={styles.wishlistActionBtn}
-          onPress={() => setWishlist((w) => !w)}
-        >
-          {wishlist ? (
-            <SvgIcon name="heart" width={22} height={22} color={COLORS.secondary} />
-          ) : (
-            <SvgIcon name="heart" width={22} height={22} color={COLORS.off_white} />
-          )}
+      <View style={styles.actionBar}>
+        <Pressable onPress={handleAddToCart}>
+          <SvgIcon name="add_to_basket" width={SCREEN_W} height={BTN_H} />
         </Pressable>
-        <Pressable style={styles.addToCartBtn} onPress={handleAddToCart}>
-          <SvgIcon name="plus" width={18} height={18} color={COLORS.off_white} />
-          <Text style={styles.addToCartText}>ADD TO BASKET</Text>
+        {insets.bottom > 0 && (
+          <View style={{ height: insets.bottom, backgroundColor: '#000' }} />
+        )}
+        {/* Wishlist overlay on the heart icon (right ~55px of SVG) */}
+        <Pressable
+          onPress={() => setWishlist((w) => !w)}
+          style={[styles.wishlistOverlay, { width: Math.round(55 * SCREEN_W / 375), height: BTN_H }]}
+        >
+          {wishlist && (
+            <SvgIcon name="heart" width={20} height={20} color={COLORS.secondary} />
+          )}
         </Pressable>
       </View>
     </View>

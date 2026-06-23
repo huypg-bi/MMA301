@@ -23,6 +23,15 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 const { width: SCREEN_W } = Dimensions.get('window');
 const FOOTER_SVG_H = Math.round(SCREEN_W * 340 / 375);
 const FOOTER_CONTENT_H = Math.round(SCREEN_W * 294.754 / 375);
+const OF_H = Math.round(SCREEN_W * 466 / 375);
+const OF_SCALE = SCREEN_W / 375;
+
+const MIROODLES = [
+  { src: require('@/assets/images/miroodle_0.png'), x: 75.5,  y: 177.6, w: 49.8, h: 34.9 },
+  { src: require('@/assets/images/miroodle_1.png'), x: 246.8, y: 182.7, w: 52.5, h: 36.8 },
+  { src: require('@/assets/images/miroodle_2.png'), x: 71.9,  y: 282.5, w: 54.4, h: 38.1 },
+  { src: require('@/assets/images/miroodle_3.png'), x: 249.6, y: 282.5, w: 54.4, h: 38.1 },
+];
 
 const CATEGORIES_MAP: Record<string, string> = {
   "electronics": "Electronics",
@@ -192,6 +201,26 @@ export default function HomeScreen() {
               </View>
             ))}
           </View>
+        </View>
+
+        {/* Openfashion Banner */}
+        <View style={{ width: SCREEN_W, height: OF_H }}>
+          <SvgIcon name="openfashion" width={SCREEN_W} height={OF_H} color={COLORS.title_active} />
+          {MIROODLES.map((m, i) => (
+            <Image
+              key={i}
+              source={m.src}
+              style={{
+                position: 'absolute',
+                left: m.x * OF_SCALE,
+                top: m.y * OF_SCALE,
+                width: m.w * OF_SCALE,
+                height: m.h * OF_SCALE,
+                tintColor: COLORS.title_active,
+              }}
+              contentFit="contain"
+            />
+          ))}
         </View>
 
         {/* Just For You */}

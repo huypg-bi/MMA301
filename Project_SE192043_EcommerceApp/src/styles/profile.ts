@@ -28,11 +28,6 @@ export const profileStyles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  avatarText: {
-    fontSize: 22,
-    color: COLORS.off_white,
-    fontWeight: '700',
-  },
   userInfo: {
     flex: 1,
     gap: 3,
@@ -127,5 +122,93 @@ export const profileStyles = StyleSheet.create({
     fontSize: 12,
     color: COLORS.placeholder,
     marginTop: 8,
+  },
+
+  // Guest (not logged in) styles
+  guestContent: {
+    padding: 24,
+    gap: 32,
+  },
+  guestHero: {
+    alignItems: 'center',
+    gap: 12,
+    paddingTop: 24,
+  },
+  guestTitle: {
+    fontSize: 24,
+    color: COLORS.title_active,
+    letterSpacing: 2,
+    fontWeight: '600',
+  },
+  guestSubtitle: {
+    fontSize: 14,
+    color: COLORS.label,
+    textAlign: 'center',
+    lineHeight: 22,
+  },
+  guestForm: {
+    gap: 16,
+  },
+  guestField: {
+    gap: 6,
+  },
+  guestLabel: {
+    fontSize: 12,
+    color: COLORS.label,
+    letterSpacing: 1,
+    textTransform: 'uppercase',
+  },
+  guestInput: {
+    backgroundColor: COLORS.input_background,
+    borderWidth: 1,
+    borderColor: COLORS.line,
+    borderRadius: 8,
+    paddingHorizontal: 14,
+    paddingVertical: 12,
+    fontSize: 15,
+    color: COLORS.body,
+  },
+  guestPasswordRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: COLORS.input_background,
+    borderWidth: 1,
+    borderColor: COLORS.line,
+    borderRadius: 8,
+    paddingHorizontal: 14,
+    gap: 8,
+  },
+  guestPasswordInput: {
+    flex: 1,
+    paddingVertical: 12,
+    fontSize: 15,
+    color: COLORS.body,
+  },
+  guestEyeText: {
+    fontSize: 13,
+    color: COLORS.secondary,
+  },
+  guestError: {
+    fontSize: 13,
+    color: '#E57373',
+  },
+  guestLoginBtn: {
+    backgroundColor: COLORS.title_active,
+    borderRadius: 8,
+    paddingVertical: 14,
+    alignItems: 'center',
+    marginTop: 4,
+  },
+  guestLoginBtnText: {
+    color: COLORS.off_white,
+    fontSize: 14,
+    letterSpacing: 2,
+    fontWeight: '600',
+  },
+  guestDemo: {
+    textAlign: 'center',
+    fontSize: 12,
+    color: COLORS.placeholder,
+    marginTop: 4,
   },
 });

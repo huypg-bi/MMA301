@@ -253,28 +253,12 @@ export const productDetailStyles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: COLORS.title_active,
-    paddingHorizontal: 20,
-    paddingTop: 12,
-    gap: 16,
   },
-  wishlistActionBtn: {
-    padding: 8,
-  },
-  addToCartBtn: {
-    flex: 1,
-    flexDirection: 'row',
+  wishlistOverlay: {
+    position: 'absolute',
+    right: 0,
+    top: 0,
     alignItems: 'center',
     justifyContent: 'center',
-    gap: 10,
-    paddingVertical: 14,
-  },
-  addToCartText: {
-    color: COLORS.off_white,
-    fontSize: 14,
-    letterSpacing: 2,
-    fontWeight: '600',
   },
 });

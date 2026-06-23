@@ -95,32 +95,33 @@ export default function CategoriesScreen() {
       <Header title="Categories" />
 
       {/* Category Tabs */}
-      <ScrollView
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        style={styles.categoryTabs}
-        contentContainerStyle={styles.categoryTabsContent}
-      >
-        <Pressable
-          style={[styles.catTab, activeCategory === 'all' && styles.catTabActive]}
-          onPress={() => handleCategoryChange('all')}
+      <View style={styles.categoryTabsWrapper}>
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={styles.categoryTabsContent}
         >
-          <Text style={[styles.catTabText, activeCategory === 'all' && styles.catTabTextActive]}>
-            All
-          </Text>
-        </Pressable>
-        {categories.map((cat) => (
           <Pressable
-            key={cat}
-            style={[styles.catTab, activeCategory === cat && styles.catTabActive]}
-            onPress={() => handleCategoryChange(cat)}
+            style={[styles.catTab, activeCategory === 'all' && styles.catTabActive]}
+            onPress={() => handleCategoryChange('all')}
           >
-            <Text style={[styles.catTabText, activeCategory === cat && styles.catTabTextActive]}>
-              {cat.charAt(0).toUpperCase() + cat.slice(1)}
+            <Text style={[styles.catTabText, activeCategory === 'all' && styles.catTabTextActive]}>
+              All
             </Text>
           </Pressable>
-        ))}
-      </ScrollView>
+          {categories.map((cat) => (
+            <Pressable
+              key={cat}
+              style={[styles.catTab, activeCategory === cat && styles.catTabActive]}
+              onPress={() => handleCategoryChange(cat)}
+            >
+              <Text style={[styles.catTabText, activeCategory === cat && styles.catTabTextActive]}>
+                {cat.charAt(0).toUpperCase() + cat.slice(1)}
+              </Text>
+            </Pressable>
+          ))}
+        </ScrollView>
+      </View>
 
       {/* Toolbar */}
       <View style={styles.toolbar}>
@@ -170,6 +171,7 @@ export default function CategoriesScreen() {
         </View>
       ) : viewMode === 'grid' ? (
         <FlatList
+          key="grid"
           data={displayProducts}
           keyExtractor={(p) => `cat-${p.id}`}
           numColumns={2}
@@ -182,6 +184,7 @@ export default function CategoriesScreen() {
         />
       ) : (
         <FlatList
+          key="list"
           data={displayProducts}
           keyExtractor={(p) => `cat-list-${p.id}`}
           contentContainerStyle={[styles.listContent, { paddingBottom: insets.bottom + 16 }]}
