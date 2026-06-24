@@ -1,0 +1,191 @@
+import { StyleSheet } from 'react-native';
+import { THEME } from './theme';
+
+export const cartStyles = StyleSheet.create({
+  flex: {
+    flex: 1,
+    backgroundColor: THEME.colors.background,
+  },
+  emptyContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 16,
+    paddingHorizontal: 40,
+  },
+  emptyTitle: {
+    fontSize: THEME.fontSize.xl,
+    fontWeight: THEME.fontWeight.semibold,
+    color: THEME.colors.textPrimary,
+  },
+  emptySubtitle: {
+    fontSize: THEME.fontSize.base,
+    color: THEME.colors.textSecondary,
+    textAlign: 'center',
+    lineHeight: 22,
+  },
+  shopBtn: {
+    backgroundColor: THEME.colors.primary,
+    paddingHorizontal: 32,
+    paddingVertical: 14,
+    borderRadius: THEME.radius.sm,
+    marginTop: 8,
+  },
+  shopBtnText: {
+    color: THEME.colors.white,
+    fontSize: THEME.fontSize.base,
+    fontWeight: THEME.fontWeight.semibold,
+    letterSpacing: 1,
+  },
+  list: {
+    padding: 16,
+  },
+  listHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 16,
+  },
+  itemCount: {
+    fontSize: THEME.fontSize.sm,
+    color: THEME.colors.textSecondary,
+  },
+  clearText: {
+    fontSize: THEME.fontSize.sm,
+    color: THEME.colors.salePrice,
+  },
+  separator: {
+    height: 1,
+    backgroundColor: THEME.colors.border,
+    marginVertical: 16,
+  },
+  cartItem: {
+    flexDirection: 'row',
+    gap: 12,
+  },
+  itemImage: {
+    width: 100,
+    height: 120,
+    borderRadius: THEME.radius.sm,
+    backgroundColor: THEME.colors.backgroundAlt,
+  },
+  itemInfo: {
+    flex: 1,
+    gap: 6,
+  },
+  itemHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  itemCategory: {
+    fontSize: THEME.fontSize.xs,
+    color: THEME.colors.textSecondary,
+    fontWeight: THEME.fontWeight.semibold,
+    letterSpacing: 1.5,
+    textTransform: 'uppercase',
+  },
+  itemTitle: {
+    fontSize: THEME.fontSize.sm,
+    color: THEME.colors.textPrimary,
+    lineHeight: 19,
+  },
+  itemVariant: {
+    fontSize: THEME.fontSize.xs,
+    color: THEME.colors.textMuted,
+  },
+  itemFooter: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginTop: 4,
+  },
+  qtyRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
+  },
+  qtyBtn: {
+    width: 30,
+    height: 30,
+    borderRadius: 15,
+    backgroundColor: THEME.colors.backgroundAlt,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderWidth: 1,
+    borderColor: THEME.colors.border,
+  },
+  qtyText: {
+    fontSize: THEME.fontSize.base,
+    color: THEME.colors.textPrimary,
+    width: 28,
+    textAlign: 'center',
+    fontWeight: THEME.fontWeight.medium,
+  },
+  itemPrice: {
+    fontSize: THEME.fontSize.lg,
+    color: THEME.colors.salePrice,
+    fontWeight: THEME.fontWeight.semibold,
+  },
+  summary: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    backgroundColor: THEME.colors.background,
+    borderTopWidth: 1,
+    borderTopColor: THEME.colors.border,
+    paddingHorizontal: 16,
+    paddingTop: 16,
+    gap: 10,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: -4 },
+    shadowOpacity: 0.06,
+    shadowRadius: 8,
+    elevation: 8,
+  },
+  summaryRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  summaryLabel: {
+    fontSize: THEME.fontSize.sm,
+    letterSpacing: 1.5,
+    color: THEME.colors.textPrimary,
+    fontWeight: THEME.fontWeight.semibold,
+  },
+  summaryValue: {
+    fontSize: THEME.fontSize.xl,
+    color: THEME.colors.salePrice,
+    fontWeight: THEME.fontWeight.bold,
+  },
+  shippingNote: {
+    fontSize: THEME.fontSize.xs,
+    color: THEME.colors.textMuted,
+    lineHeight: 18,
+  },
+  checkoutBtn: {
+    backgroundColor: THEME.colors.primary,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 10,
+    paddingVertical: 15,
+    borderRadius: THEME.radius.sm,
+  },
+  checkoutBtnText: {
+    color: THEME.colors.white,
+    fontSize: THEME.fontSize.sm,
+    letterSpacing: 1.5,
+    fontWeight: THEME.fontWeight.semibold,
+  },
+  continueBtn: {
+    alignItems: 'center',
+    paddingVertical: 4,
+  },
+  continueBtnText: {
+    fontSize: THEME.fontSize.sm,
+    color: THEME.colors.textSecondary,
+  },
+});
